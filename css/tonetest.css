@@ -1,0 +1,29 @@
+/* tone.js testing css */
+
+body {
+	height: 250px;
+	background-image: repeating-radial-gradient(red, white 10%, blue 15%);
+}
+
+#controls {
+	color: white;
+	text-align: center;
+	background-color: red;
+	width: 400px;
+	height: 230px;
+	border: 1px solid blue;
+	margin-top: 100px;
+	transform: skewY(45deg);
+}
+
+#keys {
+	color: blue;
+	background-color: blue;
+	width: 300px;
+	height: 25px;
+	border: 1px solid blue;
+	margin-bottom: 30px;
+	margin-left: 50px;
+}
+
+button {color: blue;}
