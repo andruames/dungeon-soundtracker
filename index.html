@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dungeon Soundtracker</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/dungeonsound.css">
+	<link rel="icon" type="image/ico" href="image/icon.ico">
+</head>
+<body>
+	<script src="https://tonejs.github.io/build/Tone.js"></script>
+	<script src="javascript/dungeonsound.js"></script>
+	<script src="javascript/dungeonvisual.js"></script>
+
+	<div id="mainBody">
+		<img src="image/title4.png" width="60%" alt="Dungeon Soundtracker">
+		<br>
+		<img src="image/swordcloth.gif" width="30%" alt="Sword covered in cloth">
+		<br>
+
+		<button id="onOff" onclick="hitIt()">ON</button>
+		<br><br>
+
+		<div id="controls">
+			<p>Root note in Hertz:
+				<input type="text" id="rootInput" class="inputField" value="360">
+			</p>
+
+			<p>Tempo in Beats per Minute:
+				<input type="text" id="bpmInput" class="inputField" value="80">
+			</p>
+
+			<p>Gregorian Mode:
+				<select name="modeInput" id="modeInput">
+					<option value="1">Dorian</option>
+					<option value="3">Phrygian</option>
+					<option value="5">Lydian</option>
+					<option value="7">Mixolydian</option>
+				</select>
+			</p>
+
+			<p>Reverb Amount:
+				<input type="range" id="reverbWet" min="0" max="10">
+			</p>
+			<p hidden>
+				Reverb Time:
+				<input type="range" id="reverbTime" min="0" max="10">
+			</p>
+			<p>
+				Chorus Amount:
+				<input type="range" id="chorusWet" min="0" max="10" value="3">
+			</p>
+			<i id="instruct">Turn off and on again to apply new settings.</i>
+		</div>
+	</div>
+
+	<div id="sidebar">
+		<a href="index.html">
+			<img src="image/castle.png" width="90%" alt="Castle">
+		</a>
+		<br>
+		<button class="sideguy" id="aboutButton" onclick="openAbout()">About</button>
+		<button class="sideguy" id="howToButton" onclick="openHowTo()">How To</button>
+		<i>PRESETS</i>
+		<button class="sideguy" onclick="preset(500,120,3,1,1)">Test Your Wit</button>
+		<button class="sideguy" onclick="preset(300,70,5,9,5)">Gilded Halls</button>
+		<button class="sideguy" onclick="preset(420,60,7,9,8)">Ancient Tale</button>
+		<button class="sideguy" onclick="preset(360,80,1,5,3)">Cobblestone (Default)</button>
+	</div>
+	
+	<div class="modalBG" id="howToModal">
+		<div class="modal">
+			<span class="close" onclick="closeHowTo()">&times;</span>
+			<p>Simply press "ON" to start the Dungeon Soundtracker!</p>
+			<p>
+				Settings will not update in real time,
+				you must turn the soundtracker off and on again to apply any changes.
+			</p>
+			<p>Root notes between 200 Hz and 600 Hz work best.</p>
+			<p>40 bpm is quite slow, 140 is quite fast.</p>
+			<p>
+				Dorian is adventurous, Phrygian is mysterious, 
+				Lydian is regal, Mixolydian is whimsical.
+			</p>
+		</div>
+	</div>
+
+	<div class="modalBG" id="aboutModal">
+		<div class="modal">
+			<span class="close" onclick="closeAbout()">&times;</span>
+			<p>
+				Dungeon Soundtracker is meant as a tool for Game Masters,
+				to give free, endless background music for any kind of RPG or fantasy scenario.
+			</p>
+			<p>
+				The core of this website is the wonderful 
+				<a href="https://tonejs.github.io/" class="linkz">Tone.js</a>,
+				which creates all the sounds and effects. 
+				Huge thanks to everyone who has worked on Tone, 
+				I can't even imagine the work needed to make a tool like that!
+			</p>
+			<p>
+				Made by Andrew Ames in 2018 for MUMT 301 at McGill University, 
+				under professor Gabriel Vigliensoni.
+			</p>
+			<p>
+				Huge thanks to Gabe Downs + Prof. Vigliensoni for your advice,
+				thanks to Kolin Biggs for letting me stay with you while I completed this!
+			</p>
+		</div>
+	</div>
+
+</body>
+</html>
